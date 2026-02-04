@@ -1,7 +1,8 @@
-#import "@preview/ambivalent-amcis:0.1": amcis
+#import "@preview/ambivalent-amcis:0.1.1": amcis
+
 
 #let authors_list = (
-  // Authors as ([Author Name], [Affiliation], "email@address.com"),
+// Authors as ([Author Name], [Affiliation], "email@address.com"),
   ([Ryan Schuetzler], [Brigham Young University], "ryan.schuetzler@byu.edu"),
   ([Alice T. Academic], [Other University], "alice@other.edu"),
   ([Bob B. Bobberson], [Independent Researcher], "bob@example.org")
@@ -12,11 +13,11 @@
   title: [Paper Submission Title],
   short-title: [Short title (up to 8 words)], // Hidden for initial submission
   // conference-line: [Thirty-second Americas Conference on Information Systems, Reno, 2026], // This is the default. Can be updated for future years
-  paper-type: "Full Paper", // "Completed Research Paper" or "Emergent Research Forum (ERF) Paper"
+  paper-type: "Full Paper", // "Full Paper" or "Emergent Research Forum (ERF) Paper"
   abstract: [In this document we describe the formatting requirements for the Proceedings of the AMCIS Conference.  Please review this document carefully. You can use this document as a template and copy/paste your paper content here (this might be the best or easiest way). Please be sure to adhere to the formatting requirements. Submission must be made in PDF format. Abstracts should be no more than 150 words, as the abstract will also be used for the conference program.], // Hidden for initial submission
   keywords: ([Guides], [instructions], [length], [conference publications]),
-  acknowledgements: [Please do #underline[_not_] add acknowledgements to your original submission because it may identify authors. Add any acknowledgements to the revised, camera-ready version of your paper.
-  ], // Hidden for initial submission
+  // acknowledgements: [Please do #underline[_not_] add acknowledgements to your original submission because it may identify authors. Add any acknowledgements to the revised, camera-ready version of your paper.
+  //], // Hidden for initial submission
   authors: authors_list,
   bib: bibliography("./references.bib", style: "new-apa.csl", title: none),
   camera-ready: true, // true for camera-ready, false for initial submission
@@ -43,7 +44,7 @@ Please use a 10-point Georgia font (similar to Times New Roman, but more easily 
 There should be a 6pt space between paragraphs.
 
 = Sections
-The heading of a section should be Georgia 13-point bold, left justified (Heading 1 Style in this template file). Sections should not be numbered. 
+The heading of a section should be Georgia 13-point bold, left justified (Heading 1 Style in this template file). Sections should not be numbered.
 
 == Subsections
 Headings of subsections should be in Georgia 11-point bold italics with initial letters capitalized (Heading 2). (Note: for sub-sections and sub-subsections, words like ‘the’, ‘of’, ‘a’, ‘an’ are not capitalized unless it is the first word of the heading.)
@@ -52,12 +53,12 @@ Headings of subsections should be in Georgia 11-point bold italics with initial 
 Headings for sub-subsections should be in Georgia 10-point bold with initial letters capitalized (Heading 3). Please do not go any further into another layer/level.
 
 = Figures, Tables, & Captions
-Place figures and tables close to the relevant text (or where they are referenced in the text). 
+Place figures and tables close to the relevant text (or where they are referenced in the text).
 
 Captions should be Georgia 10-point bold (Caption Style in this template file).  They should be numbered (e.g., “Table 1” or “Figure 2”), centered and placed beneath the figure or table.  Please note that the words “Figure” and “Table” should be spelled out (e.g., “Figure” rather than “Fig.”) wherever they occur. The proceedings will be made available online, thus color figures are possible.
 
 == Inserting Images
-Using figures in Word is a recipe for disaster. You have to do hacky workarounds like putting the figure in a table just to keep the caption and figure together. With Typst and other formatting tools, that's a thing of the past. Just use the built-in `#figure` function to easily place a figure, and automatically number it (with a caption!). You can even reference the figure with an in-text cross reference like so: Look at the cool robot in @pepper. 
+Using figures in Word is a recipe for disaster. You have to do hacky workarounds like putting the figure in a table just to keep the caption and figure together. With Typst and other formatting tools, that's a thing of the past. Just use the built-in `#figure` function to easily place a figure, and automatically number it (with a caption!). You can even reference the figure with an in-text cross reference like so: Look at the cool robot in @pepper.
 
 #figure(image("assets/pepper.jpg", width: 50%),
 caption: [What a beautiful robot.]) <pepper> // The <pepper> is the name used for cross-referencing (with @pepper in the paragraph above)
@@ -65,11 +66,11 @@ caption: [What a beautiful robot.]) <pepper> // The <pepper> is the name used fo
 == Table Style
 Inserting a table in the text can work well. See Table 1 below. If you do not use this style, then you may want to adjust the vertical spacing of the text in the tables. (In Word, use Format | Paragraph… and then the Line and Page Breaks tab. Generally, text in each field of a table will look better if it has equal amounts of spacing above and below it, as in @treatments.)
 
-// If you don't need a label for your table, 
+// If you don't need a label for your table,
 // you don't need to put it in a figure.
-// Honestly Typst table formatting is kinda rough, but you can 
-// use online tools like https://www.latex-tables.com/?format=typst&force 
-// to make it slightly less horrible. 
+// Honestly Typst table formatting is kinda rough, but you can
+// use online tools like https://www.latex-tables.com/?format=typst&force
+// to make it slightly less horrible.
 // Packages like pypst for python or gt for R can output Typst-formatted tables.
 #figure(
   table(
@@ -85,8 +86,8 @@ Inserting a table in the text can work well. See Table 1 below. If you do not us
 
 = Language, Style, and Content
 With regard to spelling and punctuation, you may use any dialect of English (e.g., British, Canadian, US, etc.) provided this is done consistently. Hyphenation is optional. To ensure suitability for an international audience, please pay attention to the following:
-- Write in a straightforward style. 
-- Try to avoid long or complex sentence structures. 
+- Write in a straightforward style.
+- Try to avoid long or complex sentence structures.
 - Briefly define or explain all technical terms that may be unfamiliar to readers.
 - Explain all acronyms the first time they are used in your text – e.g., "Digital Library (DL)".
 - Explain local references (e.g., not everyone knows all city names in a particular country).
@@ -98,4 +99,3 @@ It is important that you write for a general audience.  It is also important tha
 == References and Citations
 References should be listed alphabetically by author name at the end of the paper and formatted in conformance with #link("https://apastyle.apa.org/products/publication-manual-7th-edition")[APA 7th edition]. References must be complete, i.e., include, as appropriate, volume, number, month, publisher, city and state, editors, last name and initials of all authors, page numbers, etc.  If you use EndNote, be aware that different versions of the software change the styles, creating some inconsistencies. Your references should comprise only published materials accessible to the public. Proprietary information may not be cited. In text citations can be done with @Ahlers2013, @ackoff_management_1961, or #cite(<chenhall_formal_1989>, form: "prose"), for example. Or if you mention the authors in the text, you can do just the year as in "Schuetzler and colleagues (#cite(<schuetzler2024Student>, form: "year")) may have written the best paper ever."
 // The @Ahlers2013 and others are bibtex citation keys from the references.bib
-

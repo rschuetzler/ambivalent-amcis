@@ -19,14 +19,14 @@
           (grid.cell()[#author-card(authors.at(i))], )
         }
       }
-  
+
   grid(
     columns: (1fr, 1fr),
     gutter: 10pt,
     align: (center, center),
     ..authors-list
   )
-  
+
 }
 
 
@@ -36,15 +36,15 @@
   short-title: [Short title (up to 8 words)],
   conference-line: [Thirty-second Americas Conference on Information Systems, Reno, 2026],
 
-  
+
   title: [Paper Submission Title],
   paper-type: "Full Paper",
   // Front matter (required only for camera-ready)
   abstract: none,
   keywords: (),
-  acknowledgements: [], // Optional
+  acknowledgements: none, // Optional
   authors: (),
-  bib: [],
+  bib: none,
   camera-ready: false,
 
   doc
@@ -98,8 +98,8 @@
     ]
   }
 
-    
-    
+
+
   // Optional front matter (often OFF for initial submission)
   if camera-ready {
 
@@ -108,7 +108,7 @@
       parbreak()
     }
 
-    
+
     if abstract != none {
       parbreak()
       heading([Abstract])
@@ -123,7 +123,7 @@
         if i < keywords.len() - 1 { [, ] }
       }
     }
-    
+
     parbreak()
   }
 
